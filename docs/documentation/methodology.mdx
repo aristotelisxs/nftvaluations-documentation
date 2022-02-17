@@ -1,0 +1,82 @@
+---
+sidebar_position: 3
+title: Methodology
+---
+
+:::info
+## How We Do Things
+
+We continuously fetch transactions and events in order to determine NFT movements and sales across [supported marketplace(s)](#supported-marketplace) and collections' smart contracts (currently via Etherscan). We collect data on transactions, current prices, NFT properties, etc. and store them in our systems. We try to add additional properties such as rarity rank or additional properties that are not on the smart contracts (where possible).
+
+Currently we have deployed an optimal model for our valuation powered by Machine learning while we investigate how to create and automatically fine-tune models based on nature of each individual collection. We will share more about our work once the results are satisfactory at a later stage.
+:::
+
+## Supported Collections
+We are actively looking into adding new collections to our website. Our statistic and valuations are based on what we currently support and show and not representative of the whole NFT space out there. Please note that even with supported collections, some data may be incomplete as we do not support every marketplace right now (please see [Supported Marketplace(s)](#supported-marketplace) for more)
+
+## Valuation (Powered by Machine Learning)
+Currently we have deployed an optimal model for our valuation powered by Machine learning. Our model utilizes the token's properties as well as their most recent sale value & time.
+We are actively investigating how to create and automatically fine-tune models based on nature of each individual collection. We will share more about our work once the results are satisfactory at a later stage.
+
+Valuation is the value that is output.
+
+## Adjusted Floor Market Capitalization (AF Market Cap)
+AF Market Cap is the sum of each token’s Adjusted Floor in a given collection. The adjusted floor for each token is the highest value of its properties’ adjusted floor which can be calculated as follows:
+
+For each property, find the cheapest token that is currently on sale:
+
+- If no token with a given property is available for sale, then take the higher of “last sale for that property” and “last sale for the collection” (Note: this addresses cases like rare properties so the collection is not undervalued)
+- If a property’s adjusted floor value is more than 5 times the higher of “last sale for that property” and “last sale for the collection”, it will be set to this value instead.
+
+:::note
+The prices are fetched from the [Supported Marketplace(s)](#supported-marketplace).
+:::
+
+## NFTi Market Capitalization (NFTi Market Cap)
+NFTi is a combination of adjusted floor market cap and our valuations powered by machine learning. NFTi is currently calculated as the Average of Adjusted Floor and ML Valuation of each token. The Market Cap is the sum of tokens’ NFTi.
+
+## Percentage For Sale (% For Sale)
+This is the proportion of tokens currently offered for sale relative to the total number of available tokens in a collection.
+
+Example: CryptoPunks has 10,000 NFTs in total. If at this point in time, there are 2,000 punks for sale, the “% For Sale” of CryptoPunks is 20%.
+:::note
+Some may look at the complement of the sale percentage ( 100% - SalePercentage ) as the ‘Believer Ratio’ as an indicator of owners’ willingness to sell or belief that the current market is undervalued for their tokens.
+:::
+
+## Floor
+The floor of a collection is the cheapest NFT that can be purchased from that collection at that point in time. The floor is derived only from their current sale price (asking price) which is what current owners are asking to sell their NFT which is currently fetched from the [Supported Marketplace(s)](#supported-marketplace).
+
+Example: If in a collection, the lowest sale price is 10 Ethereum and a rare property’s lowest price is 32 Ethereum, then the Collection Floor is 10 Ethereum and that rare property’s floor is 32 Ethereum.
+:::note
+Currently it may take up to 2 hours for the floor data to be updated. We are looking into an alternative implementation so we can get them in almost real time.
+:::
+
+## Volume
+Volume is a measure of how much a collection has traded in a specific period of time. With NFTs, the volume is more often than not measured in Ethereum. Volume can be a great indicator of market strength.
+
+The typical time periods that you will see for volume are:
+
+- 24 Hours
+- 7 Days
+- 30 Days
+- All time
+
+These periods help provide an insight into the state of the collection over time.
+
+Another great metric with volume is the Volume Change which is measured in percentage. This metric helps understand how the collection has changed over specific periods.
+
+- 24 Hours (Comparing the last 24 hours with the 24 hours before that)
+- 7 Days (Comparing the last week to the week before that)
+- 30 Days (Comparing the last month to the month before that)
+
+## Transactions
+Transactions are currently derived from original contracts as well as the [Supported Marketplace(s)](#supported-marketplace). Currently there are 4 possible types of transactions:
+
+- **Transfer**: Transferring ownership of token(s) from current owner to the new one
+- **Sale**: Registered sale of token(s) (commonly on marketplace and in some cases the contract) for a price
+  - Note: All non-Ethereum transactions are converted to Ethereum based on their exchange rate at the time of transactions. In some cases where the exchange ratio is not available, no conversion is done and there is no equivalent value in Ethereum.
+- **Mint**: Initial ownership claim over token(s)
+- **External Transfer**: These are transactions that took place on a contract other than the token’s original contract or [Supported Marketplace(s)](#supported-marketplace). They can be potential sales, swaps, or transfers.
+
+## Supported Marketplace
+Currently we get our pricing information from OpenSea, except for CryptoPunks where the pricing data come from their contract.

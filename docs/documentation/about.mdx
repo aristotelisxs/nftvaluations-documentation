@@ -1,0 +1,85 @@
+---
+sidebar_position: 4
+---
+
+# About
+
+## What is the project goal?
+
+The primary project objective is to establish a robust and defensible methodology for calculating Non-Fungible Token (NFT) market capitalizations on an ecosystem basis.
+
+NFTs have grown exponentially in the arts and collectibles space and continue to do so. As far as we know, our work is the first calculation of the value of NFTs within a specific NFT ecosystem to create a "market capitalization" for that ecosystem.
+
+The secondary goal is to establish a robust and automated methodology for valuing individual NFTs with relevant confidence intervals.
+
+## Why is this important?
+NFTs are already a multi-billion-dollar market, having robust and accepted valuation tools in the NFT space is crucially important for artists, collectors and investment managers.   
+
+NFTs, however, are at a nascent stage. Our view is that they will grow to absorb a meaningful percentage of the art/collectible/gaming/community market and then extend to a whole array of non-fungible real world goods and services.
+
+In other words, by the end of the decade, we believe NFTs will be a multi-trillion dollar market.
+
+It is critical for this ecosystem for robust valuation methods to emerge and we hope to play an important role in this regard, particularly given the potential for composability between DeFi and NFTs.
+
+## What do you mean by composability?
+NFTs and DeFi work using open protocols that can interact permissionlessly with each other (“composability”). This means more sophisticated, dynamic and capable systems can be built to finance NFT-based projects than with off-line or centralized projects.
+
+It is critical for this ecosystem to emerge and have robust, automated, and highly available valuations that can be fed through oracles into a variety of smart contracts.
+
+## What are the challenges in valuing NFTs?
+The most obvious challenge is that they are non-fungible so valuation models have to take into account the general price level in an ecosystem and then adjust for the varying attributes of each NFT.
+
+Calculations of fungible token market capitalizations is trivial by comparison and, even in that case, there are significant debates relating to token supply and wash trading that take place.
+
+The NFT ecosystem valuation is at least an order of magnitude more difficult. We believe this can only be solved with machine learning. The goal of this project is to test various methodologies and determine which approaches produce the best results in this field.
+
+There is a secondary challenge that relates to the large volatility swings in crypto-asset prices in general over time, which also complicates the modeling.
+
+## Which NFT ecosystems have you valued?
+We used [CryptoPunks](https://www.larvalabs.com/cryptopunks) by [LarvaLabs](https://www.larvalabs.com/) as our initial ecosystem as it is the reference NFT art project, with a significant market size and fairly liquid trading market. We have since expanded our support to 232 collections and we continue to add more.
+
+## Should I use the NFTValuations prices to buy or sell NFTs?
+Not yet! At this stage, we are comfortable that the overall market capitalization is broadly correct. The individual NFT valuations should be considered as "beta" as this point. We plan to further fine-tune the model over time and determine its predictive value going forward.
+
+We expect in a few months to be able to give stronger assertations about the model outputs, including confidence intervals of our predictions.
+
+## You have undervalued my awesome NFT that I love / overvalued a NFT I want to buy.
+Very possibly. See above!
+
+## Is this financial advice?
+Absolutely not. Crypto-assets are extraordinarily volatile and art-oriented NFTs at this stage are probably more volatile than crypto-assets in general.
+
+Anyone investing in NFTs should study the risks carefully and be aware that they may lose a large amount of their investment in ETH or USD terms.
+
+## What sales data did you use to calculate the valuations?
+We use all the sales on the [supported marketplaces](/documentation/methodology#supported-marketplace) from January 1, 2021 onwards. You can find out more on our [methodologies](/documentation/methodology) page.
+
+We do not adjust for sales that are recorded publicly on [supported marketplaces](/documentation/methodology#supported-marketplace) but may have been part of an off-chain transaction where other assets or cash were exchanged off-chain. In other words, we took all on-chain sales as reported on the [supported marketplaces](/documentation/methodology#supported-marketplace).
+
+## How have you accounted for adversarial actions like wash trading?
+We have not at this point. This is a long-standing problem in illiquid markets and will require further research. Generically, the solution will have to be managed through confidence intervals and ‘margin for error’ in NFT valuations, as opposed to hoping it can be eliminated altogether.
+
+## I have some ideas about how to improve your model!
+We would love to hear them - please get in touch at team@nftvaluations.com or [@nftvaluations](https://twitter.com/nftvaluations) (DMs are open).
+
+## How often are the valuations updated?
+The valuation is updated daily at 17:00 EST based on the sales including the last 24 hours. We aim to provide an ongoing estimate of the market capitalization of an NFT ecosystem.
+
+We will review if over time we will re-calculate on a faster cycle. Our assessment is that right now there is not sufficient liquidity to make material differences in the model on a sub-day basis.
+
+## What is the base currency for the valuation model?
+The base currency for the initial model is ETH as we believe this is the unit of account in the NFT community. We plan to also test models denominated in USD terms to see if USD prices have higher or lower predictive value.
+
+ETH-USD conversions on the website are real-time based on prices from [CryptoCompare.com](https://www.cryptocompare.com/).
+
+## Who is the team?
+The team is a team of researchers from the [Institute For the Future (IFF)](https://www.unic.ac.cy/iff/) at the [University of Nicosia](https://www.unic.ac.cy/): Ali Tayari, Mahan Fathi ([@Fathi_eth](https://twitter.com/Fathi_eth)), Christos Savva and Marios Theodoulou.
+
+The team is supervised by Dr. Dmitry Apraksin (faculty member and head of IT at the University of Nicosia) and Antonis Polemitis ([@polemitis](https://twitter.com/polemitis)), Director of IFF and CEO of the University of Nicosia.
+
+The team would like to also thank Professor Spyros Makridakis ([@spyrosmakrid](https://twitter.com/spyrosmakrid)) and Artemis Semenoglou from the [Makridakis Open Forecasting Center](https://mofc.unic.ac.cy/) for their advice and Andreas Kitsios for his graphic assistance.
+
+The University of Nicosia since 2013 is considered by many to be the leading university in the field of crypto-assets and blockchain. We believe we have the largest faculty, admin and researcher community in the world focused on crypto-assets, are involved in a wide range of research consortia, have over 40,000 student/alums community across academic and certificate programs, and advise the European Commission as the academic lead of the EU Blockchain Observatory and Forum.
+
+## How can I help / join the team?
+We are looking for team members and collaborators in all areas. Please email us at team@nftvaluations.com or DM us at [@nftvaluations](https://twitter.com/nftvaluations) (DMs are open).
