@@ -1,0 +1,50 @@
+---
+sidebar_position: 1
+---
+
+# Portfolio Management
+
+## Connect Your Wallet
+
+You can connect your wallet, either with MetaMask or with WalletConnect, by clicking on the <Highlight color="#621df5">**Connect Wallet**</Highlight> button that is found in the top right corner. Whenever you want to connect, you will be asked to sign a message to verify you have access to that wallet.
+:::note
+Your primary wallet is the one that you used to authenticate into NFTValuations. If you wish to change your primary wallet, sign out and then sign in again using the wallet that you want as your primary.
+:::
+
+## Wallet Groups
+
+You can create a Wallet Group where you can add your primary wallet and also [link additional wallets](#link-additional-wallets) in each group. You can [view each wallet group](#portfolio-evaluation) with all the NFTs from the linked wallets in your profile page.
+
+To create a new Wallet Group, you navigate to your profile settings page, click on the <Highlight color="#621df5">**New Group**</Highlight> button, enter a name for the group, and click <Highlight color="#621df5">**Create**</Highlight>.
+
+You can edit and delete any Wallet Groups that you have created by clicking on the <Highlight color="#343a40">**Edit Group**</Highlight> and <Highlight color="#be3d2c">**Delete Group**</Highlight> buttons respectively.
+
+![wallet group img](/img/portfolio-management/wallet_group.png)
+
+## Link Additional Wallets
+
+Once you have connected your primary wallet, you can link additional wallets to your profile.
+
+To do so, head to your profile settings page, select the Wallet Group in which you wish to link the additional wallet, and click on the <Highlight color="#17161c">**Add Account**</Highlight> button below. There you can add the wallet address and a label for that wallet.
+
+![additional wallet img](/img/portfolio-management/additional_wallet.png)
+
+:::note
+You do not need to sign a message for linking additional wallets.
+:::
+
+## Portfolio Evaluation
+
+You can view the evaluation of your Wallet Groups and all the NFTs from the linked wallets to each group from your profile page. Once you have connected your wallet, simply click on your profile icon on the top right corner, and click on "Portfolio Evaluation". Then you can select which of your Wallet Groups you wish to view.
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '0px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);

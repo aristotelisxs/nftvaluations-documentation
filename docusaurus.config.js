@@ -64,12 +64,12 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'documentation/intro',
+            docId: 'documentation/about',
             position: 'left',
             label: 'Documentation',
           },
           {
-            to: '/guides/intro',
+            to: '/guides/portfolio-management',
             label: 'Guides',
             position: 'left',
             activeBaseRegex: '/guides/',
@@ -94,7 +94,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/documentation/intro',
+                to: '/documentation/about',
               },
             ],
           },
