@@ -9,7 +9,7 @@ const siteName = 'NFTValuations'
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: `${ siteName } Documentation`,
-  tagline: 'Dinosaurs are cool',
+  tagline: 'One platform for all your NFT needs',
   url: 'https://nftvaluations.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -109,6 +109,10 @@ const config = {
                 label: 'Twitter',
                 href: 'https://twitter.com/nftvaluations',
               },
+              {
+                label: 'Twitter Bot',
+                href: 'https://twitter.com/nftvalbot',
+              }
             ],
           },
           {
