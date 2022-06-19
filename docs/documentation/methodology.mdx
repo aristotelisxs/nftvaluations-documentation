@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: Methodology
 ---
 
@@ -33,7 +33,38 @@ The prices are fetched from the [Supported Marketplace(s)](#supported-marketplac
 :::
 
 ## NFTi Market Capitalization (NFTi Market Cap)
-NFTi is a combination of adjusted floor market cap and our valuations powered by machine learning. NFTi is currently calculated as the Average of Adjusted Floor and ML Valuation of each token. The Market Cap is the sum of tokens’ NFTi.
+NFTi is a combination of adjusted floor market cap and our valuations powered by machine learning. NFTi is currently calculated as 
+the Average of Adjusted Floor and ML Valuation of each token. The Market Cap is the sum of tokens’ NFTi.
+
+## Significant Discrepancies between Adjusted Floor and NFTi
+Conceptually, adjusted floor and NFTi are not designed to come to result in the exact same valuation as they are very different from the other.
+So it is expected for these two valuations to be different however ideally they should not be in a complete disagreement.
+
+A **notable** discrepancy between the two valuation methods may exist in some cases. This means that the two methods do not agree and provide a valuation 
+**very** different to the other method. In some instances, this is not a problem or a "bug" since it is simply the methods doing what they are designed to do.
+However, in other instances, this could in fact be a bug and we would be looking into improvements.
+
+First, let's explore the instances where this discrepancy is acceptable. As explained above, the adjusted floor method values NFTs based on their most valuable
+trait based on the floor places at the time. This can result in the algorithm over-valuing an NFT if the trait has an unreasonable floor price. An example of this
+can be seen in the [Meridian by Matt DesLauriers](https://nftvaluations.com/collections/meridian-by-matt-deslauriers?tab=overview) collection from Art Blocks Factory.
+At the time of writing, if we look at the [Charcoal Meridians](https://nftvaluations.com/collections/meridian-by-matt-deslauriers?tab=nfts&PropertyId=408260&sort-by=Recent%20Sales)
+we can see that they're all valued at Ξ999.00 by the adjusted floor method while the NFTi method values them at around Ξ65.00. Altough the two methods are in major
+disagremeent with eachother regarding what the value of these NFTs are, they are simply providing valuations based on how they were designed. 
+We can confirm this by looking at the cheapest available Charcoal Meridian which at the time of writing is Ξ999.00.
+
+![Brandmark](/img/methodology/discrepancy-charcoal-meridian.jpg)
+
+The above instance typically happens with smaller collections or NFTs that are unique in the sense that they have a trait which is a 1/1 or has a very small supply.
+(i.e. There are only 9 Charcoal Meridians in existence)
+
+On the other hand, there are cases where such discrepancy is not acceptable and adjustments must be made from our side to improve it. We automatically flag
+these cases and are continuously working on improvements for both valuation methods. An example of this is the valuation for 
+[Chromie Squiggle #9394](https://nftvaluations.com/collections/art-blocks-chromie-squiggle/9394) where NFTi is **Ξ5.51** and adjusted floor is **Ξ300.00**.
+This particular squiggle is not a rare or unique one, in fact, it is ranked #8962 based on rarity. However, the adjusted floor is significantly over-valuing it.
+This was an issue regarding numerical properties that would influence the valuations negatively. Some NFTs have numerical properties such as the "End Color" of 
+Chromie Squiggles which is a value between 0 and 255 indicating what color the squiggle ends at. Since this property category has so many values (256 of them), it
+ends up confusing adjusted floor as it creates the illusion that the NFT has a rare property. (i.e. Squiggle #9394 has "End Color" 78 which has a rarity of 0.48%)
+This problem was fixed by identifying property categories that are numerical and ignoring them for valuations.
 
 ## Percentage For Sale (% For Sale)
 This is the proportion of tokens currently offered for sale relative to the total number of available tokens in a collection.
