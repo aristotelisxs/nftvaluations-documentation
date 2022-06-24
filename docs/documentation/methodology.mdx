@@ -75,11 +75,27 @@ Some may look at the complement of the sale percentage ( 100% - SalePercentage )
 :::
 
 ## Floor
-The floor of a collection is the cheapest NFT that can be purchased from that collection at that point in time. The floor is derived only from their current sale price (asking price) which is what current owners are asking to sell their NFT which is currently fetched from the [Supported Marketplace(s)](#supported-marketplace).
+The floor of a collection is the cheapest NFT that can be purchased from that collection at that point in time. 
+The floor is derived only from their current sale price (asking price) which is what current owners are asking 
+to sell their NFT which is currently fetched from the [Supported Marketplace(s)](#supported-marketplace).
 
-Example: If in a collection, the lowest sale price is 10 Ethereum and a rare property’s lowest price is 32 Ethereum, then the Collection Floor is 10 Ethereum and that rare property’s floor is 32 Ethereum.
+Example: If in a collection, the lowest sale price is 10 Ethereum and a rare property’s lowest price is 32 Ethereum, 
+then the Collection Floor is 10 Ethereum and that rare property’s floor is 32 Ethereum.
+
+Once we have imported a collection, we calculate the Historic AF and Historic Floor prices for the collection's lifetime. 
+The calculations are done hourly based on the active listings of the given period for the supported Marketplaces.
+
+
 :::note
-Currently Floor data are being updated in near-real time. Please note that Floor data are syncing with a 15 minute delay. This was necessary to account for the blockchain block reorganization
+Currently Floor data are being updated in near-real time. Please note that Floor data are syncing with a 15 minute delay. 
+This was necessary to account for the blockchain block reorganization
+:::
+
+:::note
+There are cases where some listings remain active even though they should have ended, either by Sale, Transfer or 
+any other action. This might happen for several reasons, i.e. blockchain block re-organization, sale events out 
+of order etc. In these cases, the floor values and charts on our website will have long flat lines for the floor 
+values. We are aware of it and are continuously working on improving these values.
 :::
 
 ## Volume
