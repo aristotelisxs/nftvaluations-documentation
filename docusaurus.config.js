@@ -14,7 +14,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.jpg',
   organizationName: 'UniversityOfNicosia', // Usually your GitHub org/user name.
   projectName: 'nftvaluations-documentation', // Usually your repo name.
 
@@ -96,15 +96,19 @@ const config = {
                 label: 'Tutorial',
                 to: '/documentation/about',
               },
+              {
+                label: 'Guides',
+                to: '/guides/portfolio-management',
+              },
             ],
           },
           {
             title: 'Community',
             items: [
-              // {
-              //   label: 'Discord',
-              //   href: 'https://discord.com',
-              // },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/nftvaluations',
+              },
               {
                 label: 'Twitter',
                 href: 'https://twitter.com/nftvaluations',
