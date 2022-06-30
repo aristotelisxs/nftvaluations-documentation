@@ -1,49 +1,68 @@
 import React from 'react';
-import clsx from 'clsx';
+import Link from "@docusaurus/Link"
 import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    title: 'Documentation',
+    image: require('../../static/img/homepage-feature-documentation.jpg').default,
+    description: 'Read our comprehensive documentation for our roadmap, methodologies, and more',
+    links: [
+      {
+        title: 'About',
+        url: '/documentation/about'
+      },
+      {
+        title: 'Methodology',
+        url: '/documentation/methodology'
+      },
+      {
+        title: 'Roadmap',
+        url: '/documentation/roadmap'
+      },
+      {
+        title: 'Branding',
+        url: '/documentation/branding'
+      }
+    ]
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
+    title: 'Guides',
+    image: require('../../static/img/homepage-feature-guides.jpg').default,
+    description: 'Our guides serve as a introduction to our core features with instructions on how to utilize them',
+    links: [
+      {
+        title: 'Getting Started',
+        url: '/'
+      },
+      {
+        title: 'Browse NFTs',
+        url: '/'
+      },
+      {
+        title: 'Collections',
+        url: '/'
+      },
+      {
+        title: 'Portfolio Management',
+        url: '/guides/portfolio-management'
+      }
+    ]
+  }
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({image, title, description, links}) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
-      </div>
-      <div className="text--center padding-horiz--md">
+    <div className={styles.featuresCard}>
+      <img src={image} className={styles.featureSvg} alt={title} />
+      <div className={styles.featuresCardHeading}>
         <h3>{title}</h3>
         <p>{description}</p>
+      </div>
+      <div className={styles.featureLinks}>
+        {links.map( link => (
+          <Link to={link.url}>{link.title}</Link>
+        ))}
       </div>
     </div>
   );
@@ -51,14 +70,12 @@ function Feature({Svg, title, description}) {
 
 export default function HomepageFeatures() {
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="container">
+      <section className={styles.features}>
+        {FeatureList.map((props, idx) => (
+          <Feature key={idx} {...props} />
+        ))}
+      </section>
+    </div>
   );
 }

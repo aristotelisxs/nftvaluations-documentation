@@ -58,8 +58,8 @@ const config = {
         title: '',
         logo: {
           alt: `${ siteName } Logo`,
-          src: 'img/logo-light.svg',
-          srcDark: 'img/logo-dark.svg'
+          src: 'img/logo-dark-beta.svg',
+          srcDark: 'img/logo-light-beta.svg'
         },
         items: [
           {
@@ -80,6 +80,11 @@ const config = {
             position: 'left' 
           },
           {
+            href: 'https://blog.nftvaluations.com',
+            label: 'Blog',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/UniversityOfNicosia/nftvaluations-documentation',
             label: 'GitHub',
             position: 'right',
@@ -93,8 +98,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'About us',
                 to: '/documentation/about',
+              },
+              {
+                label: 'Methodologies',
+                to: '/documentation/methodology',
+              },
+              {
+                label: 'Roadmap',
+                to: '/documentation/roadmap',
               },
               {
                 label: 'Guides',

@@ -5,8 +5,10 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 :root {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #9452F7;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -14,6 +16,8 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+
+  --ifm-font-family-base: 'Inter', sans-serif;
 }
 
 .docusaurus-highlight-code-line {
@@ -25,4 +29,44 @@
 
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom CSS  Dark theme */
+html[data-theme='dark'] {
+  --ifm-toc-border-color: #1A1A22;
+}
+
+html[data-theme='dark'] #__docusaurus {
+  background-color: #09090A;
+}
+
+html[data-theme='dark'] nav.navbar {
+  background-color: #17161C;
+}
+
+html[data-theme='dark'] footer.footer {
+  background-color: #09090A;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+/* Custom CSS Light theme */
+html[data-theme='light'] {
+  --ifm-toc-border-color: #e1e1e1;
+}
+
+html[data-theme='light'] #__docusaurus {
+  background-color: #F2F2F5;
+}
+
+html[data-theme='light'] nav.navbar {
+  background-color: #ffffff;
+}
+
+html[data-theme='light'] footer.footer {
+  --ifm-footer-background-color: #F2F2F5;
+  --ifm-footer-color: #333;
+  --ifm-footer-link-color: #333;
+  --ifm-footer-title-color: #111;
+
+  border-top: 1px solid var(--ifm-toc-border-color);
 }

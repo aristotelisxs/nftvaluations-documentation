@@ -2,6 +2,14 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+ html[data-theme='dark'] .homepageHeader {
+  --nv-homepage-header-color: #F2F2F5;
+  --nv-homepage-header-text-color: #79798C;
+}
+html[data-theme='light'] .homepageHeader {
+  --nv-homepage-header-color: #353547;
+  --nv-homepage-header-text-color: #79798C;
+}
 
 .heroBanner {
   padding: 4rem 0;
@@ -21,3 +29,20 @@
   align-items: center;
   justify-content: center;
 }
+
+.homepageHeader {
+  text-align: center;
+  padding: 30px;
+}
+.homepageHeader h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--nv-homepage-header-color);
+}
+.homepageHeader p {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--nv-homepage-header-text-color);
+  margin-bottom: 0;
+}
+
