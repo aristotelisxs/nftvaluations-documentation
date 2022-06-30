@@ -46,3 +46,11 @@ html[data-theme='light'] .homepageHeader {
   margin-bottom: 0;
 }
 
+@media screen and (max-width: 996px) {
+  .homepageHeader h1 {
+    font-size: 32px;
+  }
+  .homepageHeader p {
+    font-size: 16px;
+  }
+}

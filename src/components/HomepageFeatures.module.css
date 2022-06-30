@@ -19,6 +19,12 @@ html[data-theme='light'] .features {
   justify-content: center;
 }
 
+@media screen and (max-width: 996px) {
+  .features {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 .featuresCard {
   background-color: var(--nv-features-card-background);
 }
