@@ -1,41 +1,73 @@
 ---
 sidebar_position: 4
+title: Portfolio Management
 ---
 
-# Portfolio Management
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-## Connect Your Wallet
+Portfolio management tool helps you group and manage wallets and personalize your experience. Start creating groups by clicking on the purple '+' button in the left column. Once a group is created, use the purple '+' button on the right side to add wallets to it.
 
-You can connect your wallet, either with MetaMask or with WalletConnect, by clicking on the <Highlight color="#621df5">**Connect Wallet**</Highlight> button that is found in the top right corner. Whenever you want to connect, you will be asked to sign a message to verify you have access to that wallet.
-:::note
-Your primary wallet is the one that you used to authenticate into NFTValuations. If you wish to change your primary wallet, sign out and then sign in again using the wallet that you want as your primary.
-:::
+![Add groups and wallets](/img/guides/Add-Group-And-Wallet.jpg)
 
-## Wallet Groups
+To use portfolio management, you need to:  
 
-You can create a Wallet Group where you can add your primary wallet and also [link additional wallets](#link-additional-wallets) in each group. You can [view each wallet group](#portfolio-evaluation) with all the NFTs from the linked wallets in your profile page.
+1.  Connect your wallet
+2.  Create a wallet group
+3.  Add wallets to your groups
 
-To create a new Wallet Group, you navigate to your profile settings page, click on the <Highlight color="#621df5">**New Group**</Highlight> button, enter a name for the group, and click <Highlight color="#621df5">**Create**</Highlight>.
+<Tabs>
+<TabItem  value="overview"  label="Overview"  default>
+The overview page allows you to monitor generic stats of all the accounts within the selected group as follows:
 
-You can edit and delete any Wallet Groups that you have created by clicking on the <Highlight color="#343a40">**Edit Group**</Highlight> and <Highlight color="#be3d2c">**Delete Group**</Highlight> buttons respectively.
+<ul>
+  <li>Valuation of the wallet (NFTi or Adjusted Floor)</li>
+  <li>Total balance</li>
+  <li>NFTs</li>
+  <li>Activities</li>
+</ul>
 
-![wallet group img](/img/portfolio-management/wallet_group.png)
+<img
+  src={require('/static/img/guides/Portfolio-Management_Overview.jpg').default}
+  alt="Portfolio Management Overview"
+  style={{marginTop: '5px'}}
+/>
+</TabItem>
+<TabItem  value="analytics"  label="Analytics">
+The analytics section displays list of the accounts in the group highlighting their contribution (share) of the total valuation.
 
-## Link Additional Wallets
+<img
+  src={require('/static/img/guides/Wallet-Contribution.jpg').default}
+  alt="Wallet contribution"
+  style={{marginTop: '5px'}}
+/>
+</TabItem>
+<TabItem  value="nfts"  label="NFTs">
+See all the NFTs that the wallets within the wallet group hold. You can filter the NFTs by various metrics.
 
-Once you have connected your primary wallet, you can link additional wallets to your profile.
+You can filter properties by:
 
-To do so, head to your profile settings page, select the Wallet Group in which you wish to link the additional wallet, and click on the <Highlight color="#17161c">**Add Account**</Highlight> button below. There you can add the wallet address and a label for that wallet.
+<ul>
+  <li>Rarity</li>
+  <li>Floor price</li>
+  <li>Listing percent for sale</li>
+  <li>Last sale</li>
+  <li>Estimated Profits and Lose</li>
+</ul>
+</TabItem>
+<TabItem  value="activity"  label="Activity">
+Monitor all the activities across wallets within each wallet group. You can filter the activities by event type (sale, transfer and mint).
+</TabItem>
+<TabItem  value="wallets"  label="Wallets">
+This page allows you to manage wallets within your wallet group. You can add, modify or delete the wallets.
 
-![additional wallet img](/img/portfolio-management/additional_wallet.png)
-
-:::note
-You do not need to sign a message for linking additional wallets.
-:::
-
-## Portfolio Evaluation
-
-You can view the evaluation of your Wallet Groups and all the NFTs from the linked wallets to each group from your profile page. Once you have connected your wallet, simply click on your profile icon on the top right corner, and click on "Portfolio Evaluation". Then you can select which of your Wallet Groups you wish to view.
+<img
+  src={require('/static/img/guides/Wallets.jpg').default}
+  alt="Portfolio Management Wallets"
+  style={{marginTop: '5px'}}
+/>
+</TabItem>
+</Tabs>
 
 export const Highlight = ({children, color}) => (
   <span
