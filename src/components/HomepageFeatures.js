@@ -33,15 +33,15 @@ const FeatureList = [
     links: [
       {
         title: 'Getting Started',
-        url: '/'
+        url: '/guides/getting-started'
       },
       {
         title: 'Browse NFTs',
-        url: '/'
+        url: '/guides/browse'
       },
       {
         title: 'Collections',
-        url: '/'
+        url: '/guides/collections'
       },
       {
         title: 'Portfolio Management',
