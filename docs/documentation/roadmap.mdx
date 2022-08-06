@@ -3,34 +3,33 @@ sidebar_position: 3
 title: Roadmap
 ---
 
-Last updated: 26 June 2022
+Last updated: 06 August 2022
 
-This page aims to provide an overview status of where we stand in regards to our current challenges, weaknesses, and our roadmap.
+This page aims to provide an overview status of where we stand in regards to our current challenges and our roadmap.
 
-## Challenges
-* Create machine learning models that perform well on all collections and NFTs
-* Handling various data sources and bringing them together to create insights into the market
-  * Especially off-chain data such as current NFT prices (For accurate floor data)
+## Caveats and Challenges
+* NFTi and Adjusted Floor will often provide different valuations for perfectly good reasons. NFTi is aiming for a theoretical value for the token; Adjusted Floor reflects what is currently for sale. They are different lenses on the same question that can produce very different answers.
+* You should NOT assume that you should buy or sell an NFT based on Adjusted Floor or NFTi. It is possible that our values are wrong and it is also possible that our values are “right” but the price changes the next day.
+See our full [disclaimer](/disclaimer) here.
+*	Certain tokens in certain collections are simply misvalued right now. We are working through our model tuning on a collection-by-collection base to discover areas for improvement. If you see a token that you believe is misvalued, please let us know.
+*	The ultra-high-end aesthetic grails, particularly in generative art, are probably categorically undervalued right now as this feature is not represented in their metadata. We are working on new methods to adjust for this
+* The overall market capitalization data does not include all sources yet:
+  * Only uses OpenSea data for now
+  * Does not include 1 of 1, gaming or metaverse NFTs
+  * Does not include non-Ethereum NFTs
 
-## Weaknesses
-* Lack of support for ERC-1155 NFTs
-* Limited number of supported collections
-* In-house (vs. crowdsourced) machine learning models
-* Recognition of sales only from OpenSea marketplace
-
-## Roadmap
-
-### Ongoing
-* Improve accuracy of floor-related data for historic and live values
-* Continuously iterate on our NFTi valuation models to further improve their reliability
-
-### Next
-* Add support for ERC-1155 NFTs
-* Add support for marketplaces beyong OpenSea
-* Increase NFT collection coverage
-* Add direct support for NFTs sold for ERC-20 tokens (Instead of just converting them to equivalent ETH value)
-* Investigate more complex machine learning models as well as offering a paltform for crowdsourcing optimal models
-
-### On the Horizon
-* Add support for NFTs on other L1 chains (e.g. Solana)
-* Bring collection-like analytics and insights for wallets
+## Roadmap – Fall 2022
+* Add support for more generative art and PFP collections
+* Add support for new classes of NFTs
+  * ERC-1155 NFTs
+  * 1 of 1 NFTs
+  * Metaverse NFTs
+  * Gaming NFTs
+  * Rare Pepes
+  * Other non-Ethereum NFTs  
+* Add support for additional marketplaces
+*	Add better reporting about our accuracy
+*	Add better overall market reporting
+*	Advance our approach on machine learning models in various ways 
+*	Add API support for external users
+*	Improved account-level tools for users
