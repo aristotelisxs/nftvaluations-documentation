@@ -8,17 +8,16 @@ title: Methodology
 
 We continuously fetch transactions and events in order to determine NFT movements and sales across [supported marketplace(s)](#supported-marketplace) and collections' smart contracts (currently via Etherscan). We collect data on transactions, current prices, NFT properties, etc. and store them in our systems. We try to add additional properties such as rarity rank or additional properties that are not on the smart contracts (where possible).
 
-Currently we have deployed an optimal model for our valuation powered by Machine Learning while we investigate how to create and automatically fine-tune models based on nature of each individual collection. We will share more about our work once the results are satisfactory at a later stage.
+We employ an in-house developed Machine Learning (ML) pipeline that pre-processes, engineers new features and optimizes model hyper-parameters to deliver fine-tuned models, based on the sales' patterns and accompanying metadata of each individual collection.
 :::
 
 ## Supported Collections
 We are actively looking into adding new collections to our website. Our statistic and valuations are based on what we currently support and show and not representative of the whole NFT space out there. Please note that even with supported collections, some data may be incomplete as we do not support every marketplace right now (please see [Supported Marketplace(s)](#supported-marketplace) for more)
 
-## Valuation (Powered by Machine Learning)
-Currently we have deployed an optimal model for our valuation powered by Machine Learning. Our model utilizes the token's properties as well as their most recent sale value & time.
-We are actively investigating how to create and automatically fine-tune models based on nature of each individual collection. We will share more about our work once the results are satisfactory at a later stage.
+## NFTi (Powered by an ensemble of ML models)
+We serve NFTi valuations at least at a daily rate by combining the outputs of multiple ML models in an ensemble, in order to capture any edge cases not covered by individual models. Each collections employs such an ensemble, leading to a multitude of models being trained and served daily, at a massive scale. Specifically, a set of these models is allowed to extrapolate, i.e. value tokens beyond their observed sale prices within groups (metadata-driven) and individually. Another set employs interpolation, i.e. is constrained within the observed sales prices. This allows us the flexibility to more reliably value highly sought after tokens (1/1s or w/ high property rarity) with the latter approach, while also being able to value less desirable tokens closer to the floor with the former.
 
-Valuation is the value that is output.
+We have shared more technical details on the whole Data Science lifecycle in our [blog post](https://blog.nftvaluations.com/developing-an-index-for-nft-valuations-an-overview-of-the-mechanisms-that-drive-token-valuations/) and on our [market report teaser](https://blog.nftvaluations.com/nft-market-report-teaser/). Please have a look for further insights.
 
 ## Adjusted Floor Market Capitalization (AF Market Cap)
 AF Market Cap is the sum of each token’s Adjusted Floor in a given collection. The adjusted floor for each token is the highest value of its properties’ adjusted floor which can be calculated as follows:
@@ -33,8 +32,7 @@ The prices are fetched from the [Supported Marketplace(s)](#supported-marketplac
 :::
 
 ## NFTi Market Capitalization (NFTi Market Cap)
-NFTi is a combination of adjusted floor market cap and our valuations powered by machine learning. NFTi is currently calculated as 
-the Average of Adjusted Floor and ML Valuation of each token. The Market Cap is the sum of tokens’ NFTi.
+NFTi is primarily served as is. There are rare edge cases where our models exceed AF manyfold, in which case they are equated to AF to avoid erroneous Market Cap reporting. The Market Cap is the sum of tokens’ NFTi.
 
 ## Significant Discrepancies between Adjusted Floor and NFTi
 Conceptually, adjusted floor and NFTi are not designed to come to result in the exact same valuation as they are very different from the other.
